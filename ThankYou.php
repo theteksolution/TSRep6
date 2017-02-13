@@ -10,7 +10,7 @@ if (isset($_POST["hEmailText"]) && !empty($_POST["hEmailText"])) {
 
 	$hostname="WeddingRes.db.8866535.hostedresource.com";
 	$username="WeddingRes";
-	$password="Leon1717!";
+	$password="zzzzz";
 	$dbname="WeddingRes";
 	
 	

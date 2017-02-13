@@ -21,7 +21,7 @@ function UpdateDinner()
 {
 	$hostname="WeddingRes.db.8866535.hostedresource.com";
 	$username="WeddingRes";
-	$password="Leon1717!";
+	$password="zzzzz";
 	$dbname="WeddingRes";
 	$usertable="BackgroundInfo";
 	$yourfield = "FirstName";

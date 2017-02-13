@@ -18,7 +18,7 @@ function GetRentalFee($Date, $Type)
 
 	$hostname="WeddingRes.db.8866535.hostedresource.com";
 	$username="WeddingRes";
-	$password="Leon1717!";
+	$password="zzzzz";
 	$dbname="WeddingRes";
 	
 	mysql_connect($hostname,$username, $password) or die (mysql_error());

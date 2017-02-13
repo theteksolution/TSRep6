@@ -19,7 +19,7 @@ for each dinner number -- 3
 */
 	$hostname="WeddingRes.db.8866535.hostedresource.com";
 	$username="WeddingRes";
-	$password="Leon1717!";
+	$password="zzzzz";
 	$dbname="WeddingRes";
 	
 	$data = "select * from DinnerDescription where DinnerType = 'Wedding' and Enabled = 'on' Order by DinnerNumber";

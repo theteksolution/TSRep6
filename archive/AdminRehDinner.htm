@@ -1,0 +1,500 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" />
+<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+<script type="text/javascript" src="js/jqueryUI/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="js/jqueryUI/jquery-ui.css" />
+<script type="text/javascript"  src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btnGetDinner").click(function () {
+                window.location.href = "AdminRehDinner.htm?typ=" + $("#DinnerType").val() + "&num=" + $("#DinnerNumber").val();
+            });
+        });
+</script>
+<style type="text/css">
+    .bs-example{
+    	margin-top:20px;
+    }
+</style>
+</head>
+<body>
+<form id="form1" action="UpdateAdmin.php" method="post">
+<div class="container">
+<br /><br />
+<div class="row">
+<div class="col-md-4">
+<fieldset  class="form-group">
+<label for="DinnerType">Select Dinner Type:</label>
+  <select class="form-control" id="DinnerType" name="DinnerType">
+    <option>Rehearsal</option>
+    <option>Wedding</option>
+  </select>
+</fieldset>
+  </div>
+  <div class="col-md-4">
+<fieldset  class="form-group">
+ <label for="DinnerNumber">Select Dinner Number:</label>
+  <select class="form-control" id="DinnerNumber" name="DinnerNumber">
+    <option>Dinner 1</option>
+    <option>Dinner 2</option>
+    <option>Dinner 3</option>
+  </select>
+  </fieldset>
+  </div>
+  <div class="col-md-4">
+  <fieldset  class="form-group" style="padding-top:25px";>
+  <a id="btnGetDinner" class="btn btn-primary">Get Dinner</a>
+  </fieldset>
+  </div>
+  </div>
+
+<h2>Dinner 1</h2>
+
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#home">Description</a></li>
+  <li><a data-toggle="tab" href="#item1">Category 1</a></li>
+  <li><a data-toggle="tab" href="#item2">Category 2</a></li>
+  <li><a data-toggle="tab" href="#item3">Category 3</a></li>
+  <li><a data-toggle="tab" href="#item4">Category 4</a></li>
+  <li><a data-toggle="tab" href="#item5">Category 5</a></li>
+  <li><a data-toggle="tab" href="#item6">Category 6</a></li>
+  <li><a data-toggle="tab" href="#item7">Category 7</a></li>
+  <li><a data-toggle="tab" href="#item8">Category 8</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+    <h3>Description</h3>
+<div class="checkbox">
+  <label><input id="EnableDinner" name="EnableDinner" type="checkbox" />Enable Dinner</label>
+</div>
+ <fieldset class="form-group">
+    <label for="firstName">Title</label>
+    <input type="text" class="form-control" id="DinnerTitle" name="DinnerTitle"  />
+  </fieldset>
+<fieldset class="form-group">
+    <label for="firstName">Description</label>
+    <input type="text" class="form-control" id="DinnerDescription" name="DinnerDescription"  />
+  </fieldset>
+<fieldset class="form-group">
+    <label for="firstName">Price</label>
+    <input type="text" class="form-control" id="DinnerPrice" name="DinnerPrice"  />
+  </fieldset>
+  </div>
+  <div id="item1" class="tab-pane fade">
+    <h3>Menu Category 1</h3>
+
+  
+  <div class="row">
+  <div class="col-md-6">
+  <fieldset class="form-group">
+    <label for="firstName">Menu Title</label>
+    <input type="text" class="form-control" id="Cat1Title" name="Cat1Title"  />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="firstName">Menu Item 1</label>
+    <input type="text" class="form-control" id="Cat1Item1" name="Cat1Item1"  />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="firstName">Menu item 2</label>
+    <input type="text" class="form-control" id="Cat1Item2" name="Cat1Item2"  />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="firstName">Menu Item 3</label>
+    <input type="text" class="form-control" id="Cat1Item3" name="Cat1Item3"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 4</label>
+    <input type="text" class="form-control" id="Cat1Item4" name="Cat1Item4"  />
+  </fieldset>
+  </div>
+  <div class="col-md-6">
+  
+  <fieldset class="form-group">
+    <label for="firstName">Required Number</label>
+    <input type="text" class="form-control" id="Cat1ReqNum" name="Cat1ReqNum"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 5</label>
+    <input type="text" class="form-control" id="Cat1Item5" name="Cat1Item5"  />
+  </fieldset> 
+  <fieldset class="form-group">
+    <label for="firstName">Menu Item 6</label>
+    <input type="text" class="form-control" id="Cat1Item6" name="Cat1Item6"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 7</label>
+    <input type="text" class="form-control" id="Cat1Item7" name="Cat1Item7"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 8</label>
+    <input type="text" class="form-control" id="Cat1Item8" name="Cat1Item8"  />
+  </fieldset>
+  </div>
+  </div>
+
+  </div>
+  <div id="item2" class="tab-pane fade">
+    <h3>Menu Category 2</h3>
+   
+  <div class="row">
+  <div class="col-md-6">
+   <fieldset class="form-group">
+    <label for="firstName">Menu Title</label>
+    <input type="text" class="form-control" id="Cat2Title" name="Cat2Title"  />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="firstName">Menu Item 1</label>
+    <input type="text" class="form-control" id="Cat2Item1" name="Cat2Item1"  />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="firstName">Menu item 2</label>
+    <input type="text" class="form-control" id="Cat2Item2" name="Cat2Item2"  />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="firstName">Menu Item 3</label>
+    <input type="text" class="form-control" id="Cat2Item3" name="Cat2Item3"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 4</label>
+    <input type="text" class="form-control" id="Cat2Item4" name="Cat2Item4"  />
+  </fieldset>
+  </div>
+  <div class="col-md-6">
+  <fieldset class="form-group">
+    <label for="firstName">Required Number</label>
+    <input type="text" class="form-control" id="Cat2ReqNum" name="Cat2ReqNum"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 5</label>
+    <input type="text" class="form-control" id="Cat2Item5" name="Cat2Item5"  />
+  </fieldset> 
+  <fieldset class="form-group">
+    <label for="firstName">Menu Item 6</label>
+    <input type="text" class="form-control" id="Cat2Item6" name="Cat2Item6"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 7</label>
+    <input type="text" class="form-control" id="Cat2Item7" name="Cat2Item7"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 8</label>
+    <input type="text" class="form-control" id="Cat2Item8" name="Cat2Item8"  />
+  </fieldset>
+  </div>
+  </div>
+  </div>
+
+  <div id="item3" class="tab-pane fade">
+    <h3>Menu Category 3</h3>
+    <div class="row">
+  <div class="col-md-6">
+  <fieldset class="form-group">
+    <label for="firstName">Menu Title</label>
+    <input type="text" class="form-control" id="Cat3Title" name="Cat3Title"  />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="firstName">Menu Item 1</label>
+    <input type="text" class="form-control" id="Cat3Item1" name="Cat3Item1"  />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="firstName">Menu item 2</label>
+    <input type="text" class="form-control" id="Cat3Item2" name="Cat3Item2"  />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="firstName">Menu Item 3</label>
+    <input type="text" class="form-control" id="Cat3Item3" name="Cat3Item3"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 4</label>
+    <input type="text" class="form-control" id="Cat3Item4" name="Cat3Item4"  />
+  </fieldset>
+  </div>
+  <div class="col-md-6">
+  
+  <fieldset class="form-group">
+    <label for="firstName">Required Number</label>
+    <input type="text" class="form-control" id="Cat3ReqNum" name="Cat3ReqNum"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 5</label>
+    <input type="text" class="form-control" id="Cat3Item5" name="Cat3Item5"  />
+  </fieldset> 
+  <fieldset class="form-group">
+    <label for="firstName">Menu Item 6</label>
+    <input type="text" class="form-control" id="Cat3Item6" name="Cat3Item6"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 7</label>
+    <input type="text" class="form-control" id="Cat3Item7" name="Cat3Item7"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 8</label>
+    <input type="text" class="form-control" id="Cat3Item8" name="Cat3Item8"  />
+  </fieldset>
+  </div>
+  </div>
+  </div>
+  <div id="item4" class="tab-pane fade">
+    <h3>Menu Category 4</h3>
+  <div class="row">
+  <div class="col-md-6">
+  <fieldset class="form-group">
+    <label for="firstName">Menu Title</label>
+    <input type="text" class="form-control" id="Cat4Title" name="Cat4Title"  />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="firstName">Menu Item 1</label>
+    <input type="text" class="form-control" id="Cat4Item1" name="Cat4Item1"  />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="firstName">Menu item 2</label>
+    <input type="text" class="form-control" id="Cat4Item2" name="Cat4Item2"  />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="firstName">Menu Item 3</label>
+    <input type="text" class="form-control" id="Cat4Item3" name="Cat4Item3"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 4</label>
+    <input type="text" class="form-control" id="Cat4Item4" name="Cat4Item4"  />
+  </fieldset>
+  </div>
+  <div class="col-md-6">
+  
+  <fieldset class="form-group">
+    <label for="firstName">Required Number</label>
+    <input type="text" class="form-control" id="Cat4ReqNum" name="Cat4ReqNum"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 5</label>
+    <input type="text" class="form-control" id="Cat4Item5" name="Cat4Item5"  />
+  </fieldset> 
+  <fieldset class="form-group">
+    <label for="firstName">Menu Item 6</label>
+    <input type="text" class="form-control" id="Cat4Item6" name="Cat4Item6"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 7</label>
+    <input type="text" class="form-control" id="Cat4Item7" name="Cat4Item7"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 8</label>
+    <input type="text" class="form-control" id="Cat4Item8" name="Cat4Item8"  />
+  </fieldset>
+  </div>
+  </div>
+  </div>
+  <div id="item5" class="tab-pane fade">
+    <h3>Menu Category 5</h3>
+  <div class="row">
+  <div class="col-md-6">
+  <fieldset class="form-group">
+    <label for="firstName">Menu Title</label>
+    <input type="text" class="form-control" id="Cat5Title" name="Cat5Title"  />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="firstName">Menu Item 1</label>
+    <input type="text" class="form-control" id="Cat5Item1" name="Cat5Item1"  />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="firstName">Menu item 2</label>
+    <input type="text" class="form-control" id="Cat5Item2" name="Cat5Item2"  />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="firstName">Menu Item 3</label>
+    <input type="text" class="form-control" id="Cat5Item3" name="Cat5Item3"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 4</label>
+    <input type="text" class="form-control" id="Cat5Item4" name="Cat5Item4"  />
+  </fieldset>
+  </div>
+  <div class="col-md-6">
+  
+  <fieldset class="form-group">
+    <label for="firstName">Required Number</label>
+    <input type="text" class="form-control" id="Cat5ReqNum" name="Cat5ReqNum"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 5</label>
+    <input type="text" class="form-control" id="Cat5Item5" name="Cat5Item5"  />
+  </fieldset> 
+  <fieldset class="form-group">
+    <label for="firstName">Menu Item 6</label>
+    <input type="text" class="form-control" id="Cat5Item6" name="Cat5Item6"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 7</label>
+    <input type="text" class="form-control" id="Cat5Item7" name="Cat5Item7"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 8</label>
+    <input type="text" class="form-control" id="Cat5Item8" name="Cat5Item8"  />
+  </fieldset>
+  </div>
+  </div>
+  </div>
+  <div id="item6" class="tab-pane fade">
+    <h3>Menu Category 6</h3>
+   <div class="row">
+  <div class="col-md-6">
+  <fieldset class="form-group">
+    <label for="firstName">Menu Title</label>
+    <input type="text" class="form-control" id="Cat6Title" name="Cat6Title"  />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="firstName">Menu Item 1</label>
+    <input type="text" class="form-control" id="Cat6Item1" name="Cat6Item1"  />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="firstName">Menu item 2</label>
+    <input type="text" class="form-control" id="Cat6Item2" name="Cat6Item2"  />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="firstName">Menu Item 3</label>
+    <input type="text" class="form-control" id="Cat6Item3" name="Cat6Item3"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 4</label>
+    <input type="text" class="form-control" id="Cat6Item4" name="Cat6Item4"  />
+  </fieldset>
+  </div>
+  <div class="col-md-6">
+  
+  <fieldset class="form-group">
+    <label for="firstName">Required Number</label>
+    <input type="text" class="form-control" id="Cat6ReqNum" name="Cat6ReqNum"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 5</label>
+    <input type="text" class="form-control" id="Cat6Item5" name="Cat6Item5"  />
+  </fieldset> 
+  <fieldset class="form-group">
+    <label for="firstName">Menu Item 6</label>
+    <input type="text" class="form-control" id="Cat6Item6" name="Cat6Item6"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 7</label>
+    <input type="text" class="form-control" id="Cat6Item7" name="Cat6Item7"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 8</label>
+    <input type="text" class="form-control" id="Cat6Item8" name="Cat6Item8"  />
+  </fieldset>
+  </div>
+  </div>
+  </div>
+  <div id="item7" class="tab-pane fade">
+    <h3>Menu Category 7</h3>
+  <div class="row">
+  <div class="col-md-6">
+  <fieldset class="form-group">
+    <label for="firstName">Menu Title</label>
+    <input type="text" class="form-control" id="Cat7Title" name="Cat7Title"  />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="firstName">Menu Item 1</label>
+    <input type="text" class="form-control" id="Cat7Item1" name="Cat7Item1"  />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="firstName">Menu item 2</label>
+    <input type="text" class="form-control" id="Cat7Item2" name="Cat7Item2"  />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="firstName">Menu Item 3</label>
+    <input type="text" class="form-control" id="Cat7Item3" name="Cat7Item3"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 4</label>
+    <input type="text" class="form-control" id="Cat7Item4" name="Cat7Item4"  />
+  </fieldset>
+  </div>
+  <div class="col-md-6">
+  
+  <fieldset class="form-group">
+    <label for="firstName">Required Number</label>
+    <input type="text" class="form-control" id="Cat7ReqNum" name="Cat7ReqNum"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 5</label>
+    <input type="text" class="form-control" id="Cat7Item5" name="Cat7Item5"  />
+  </fieldset> 
+  <fieldset class="form-group">
+    <label for="firstName">Menu Item 6</label>
+    <input type="text" class="form-control" id="Cat7Item6" name="Cat7Item6"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 7</label>
+    <input type="text" class="form-control" id="Cat7Item7" name="Cat7Item7"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 8</label>
+    <input type="text" class="form-control" id="Cat7Item8" name="Cat7Item8"  />
+  </fieldset>
+  </div>
+  </div>
+  </div>
+  <div id="item8" class="tab-pane fade">
+    <h3>Menu Category 8</h3>
+   <div class="row">
+  <div class="col-md-6">
+  <fieldset class="form-group">
+    <label for="firstName">Menu Title</label>
+    <input type="text" class="form-control" id="Cat8Title" name="Cat8Title"  />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="firstName">Menu Item 1</label>
+    <input type="text" class="form-control" id="Cat8Item1" name="Cat8Item1"  />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="firstName">Menu item 2</label>
+    <input type="text" class="form-control" id="Cat8Item2" name="Cat8Item2"  />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="firstName">Menu Item 3</label>
+    <input type="text" class="form-control" id="Cat8Item3" name="Cat8Item3"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 4</label>
+    <input type="text" class="form-control" id="Cat8Item4" name="Cat8Item4"  />
+  </fieldset>
+  </div>
+  <div class="col-md-6">
+  
+  <fieldset class="form-group">
+    <label for="firstName">Required Number</label>
+    <input type="text" class="form-control" id="Cat8ReqNum" name="Cat8ReqNum"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 5</label>
+    <input type="text" class="form-control" id="Cat8Item5" name="Cat8Item5"  />
+  </fieldset> 
+  <fieldset class="form-group">
+    <label for="firstName">Menu Item 6</label>
+    <input type="text" class="form-control" id="Cat8Item6" name="Cat8Item6"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 7</label>
+    <input type="text" class="form-control" id="Cat8Item7" name="Cat8Item7"  />
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="firstName">Menu Item 8</label>
+    <input type="text" class="form-control" id="Cat8Item8" name="Cat8Item8"  />
+  </fieldset>
+  </div>
+  </div>
+</div>
+</div>
+<br />
+<input type="submit" value="Save Dinner" />
+<input type="hidden" value="Dinner" name="formName" />
+<!--<a id="btnSave" class="btn btn-primary">Save Dinner</a>--><br /><br />
+</div>
+</form>
+</body>
+</html>

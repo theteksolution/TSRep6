@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Background Information</title>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" />
+<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+<script type="text/javascript" src="js/jqueryUI/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="js/jqueryUI/jquery-ui.css" />
+<script type="text/javascript"  src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#resDate").datepicker();
+
+            $("#btnSub").click(function () {
+                //validate here
+
+                if (ValidateDinner() == true) {
+                    //window.location.href = "RehearsalDinnerQuestion.html";
+                    $("#form1").submit();
+                }
+            });
+
+
+            function ValidateDinner() {
+
+                var foundError = true;
+
+                $("#form1 input[type=text]").each(function () {
+                    if (this.value == "") {
+                        $("#errorDiv").show();
+
+                        $("#errorDiv").fadeTo(2000, 500).slideUp(500, function () {
+                            $("#errorDiv").hide();
+                        });
+                        console.log('false');
+                        foundError = false;
+                    }
+                });
+
+                return foundError;
+            }
+
+
+
+        });
+</script>
+<style type="text/css">
+    .bs-example{
+    	margin-top:20px;
+    }
+     input,
+select,
+textarea {
+    max-width: 400px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="bs-example">
+    <div class="progress">
+    <div class="progress-bar" style="width: 30%;">
+        Date and Choices
+    </div>
+</div>
+</div>
+<h1>Date of Interest</h1>
+<form id="form1" action="UpdateReservation.php" method="post">
+ <fieldset class="form-group">
+    <label for="resDate">Date of Interest</label>
+    <input type="text" class="form-control" id="resDate" name="resDate" placeholder="Date" />
+  </fieldset>
+  <h1>Select Dining Choices</h1>
+  <div class="checkbox">
+     <label><input id="ckReheasalDinner" name="ckReheasalDinner" type="checkbox"/>Rehearsal Dinner</label>
+  </div>
+  <div class="checkbox">
+     <label><input id="ckWeddingDinner" name="ckWeddingDinnerDinner" type="checkbox"/>Wedding Dinner</label>
+  </div>
+   <div class="checkbox">
+     <label><input id="ckBonfire" name="ckBonfire" type="checkbox"/>Bonfire</label>
+  </div>
+   <div class="checkbox">
+     <label><input id="ckBrunch" name="ckBrunch" type="checkbox"/>Brunch</label>
+  </div>
+ <!-- <fieldset class="form-group">
+    <label for="numPeople">Size of Party</label>
+    <input type="text" class="form-control" id="numPeople" name="numPeople" placeholder="Size" />
+  </fieldset>-->
+
+  <br />
+
+<div style="width:20%;float:left;"><a id="btnBack" class="btn btn-primary">Back</a></div>
+<div style="width:20%;float:left;"><a id="btnSub" class="btn btn-primary">Next</a></div>
+<div id="errorDiv" class="alert alert-warning" style="width:60%;display:none;float:right;"><strong>Warning!</strong> <span id="errorMessage">Please complete all fields.</span></div>
+
+<br /> <br /> <br />
+<input type="hidden" value="DateSize" name="formName" />
+ </form>
+  </div>
+</body>
+</html>

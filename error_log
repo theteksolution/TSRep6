@@ -1,0 +1,34 @@
+[22-May-2016 17:34:59 UTC] PHP Warning:  session_start(): Cannot send session cookie - headers already sent by (output started at /home/ifthenwhile/public_html/Test1/UpdateReservation.php:1) in /home/ifthenwhile/public_html/Test1/UpdateReservation.php on line 4
+[22-May-2016 17:34:59 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ifthenwhile/public_html/Test1/UpdateReservation.php:1) in /home/ifthenwhile/public_html/Test1/UpdateReservation.php on line 4
+[22-May-2016 17:34:59 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ifthenwhile/public_html/Test1/UpdateReservation.php:1) in /home/ifthenwhile/public_html/Test1/UpdateReservation.php on line 10
+[22-May-2016 17:36:35 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ifthenwhile/public_html/Test1/UpdateReservation.php:1) in /home/ifthenwhile/public_html/Test1/UpdateReservation.php on line 11
+[25-May-2016 03:35:24 UTC] PHP Notice:  Undefined index: address3 in /home/ifthenwhile/public_html/Test1/ReservationSummary.php on line 45
+[25-May-2016 03:36:50 UTC] PHP Notice:  Undefined index: address3 in /home/ifthenwhile/public_html/Test1/ReservationSummary.php on line 45
+[25-May-2016 04:35:18 UTC] PHP Notice:  Undefined index: hAppetizer1 in /home/ifthenwhile/public_html/Test1/ReservationSummary.php on line 69
+[25-May-2016 04:35:18 UTC] PHP Notice:  Undefined index: hAppetizer2 in /home/ifthenwhile/public_html/Test1/ReservationSummary.php on line 72
+[20-Jul-2016 04:21:58 UTC] PHP Notice:  Undefined variable: ResDateValues in /home/ifthenwhile/public_html/Test1/AdminSeasonPricing.php on line 169
+[20-Jul-2016 04:28:47 UTC] PHP Notice:  Undefined index: SeasonName in /home/ifthenwhile/public_html/Test1/AdminSeasonPricing.php on line 37
+[20-Jul-2016 04:29:42 UTC] PHP Notice:  Undefined index: SeasonName in /home/ifthenwhile/public_html/Test1/AdminSeasonPricing.php on line 37
+[20-Jul-2016 04:29:42 UTC] PHP Notice:  Undefined index: RehearsalFee in /home/ifthenwhile/public_html/Test1/AdminSeasonPricing.php on line 140
+[20-Jul-2016 04:36:15 UTC] PHP Notice:  Undefined index: SeasonName in /home/ifthenwhile/public_html/Test1/AdminSeasonPricing.php on line 37
+[25-Jul-2016 03:17:51 UTC] PHP Fatal error:  Call to undefined function GetRentalFee() in /home/ifthenwhile/public_html/Test1/ReservationSummary2.php on line 128
+[25-Jul-2016 03:21:12 UTC] PHP Fatal error:  Call to undefined function GetRentalFee() in /home/ifthenwhile/public_html/Test1/ReservationSummary.php on line 136
+[25-Jul-2016 03:38:22 UTC] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/ifthenwhile/public_html/Test1/ReservationSummary.php on line 34
+[26-Jul-2016 00:44:55 UTC] PHP Notice:  Undefined index: Bonfire in /home/ifthenwhile/public_html/Test1/ReservationSummary.php on line 73
+[26-Jul-2016 00:44:55 UTC] PHP Notice:  Undefined index: Bonfire in /home/ifthenwhile/public_html/Test1/ReservationSummary.php on line 149
+[26-Jul-2016 00:44:55 UTC] PHP Notice:  Undefined index: hBarTitle in /home/ifthenwhile/public_html/Test1/ReservationSummary.php on line 381
+[26-Jul-2016 03:12:28 UTC] PHP Notice:  Undefined index: Bonfire in /home/ifthenwhile/public_html/Test1/ReservationSummary.php on line 47
+[26-Jul-2016 03:12:28 UTC] PHP Notice:  Undefined index: Bonfire in /home/ifthenwhile/public_html/Test1/ReservationSummary.php on line 73
+[26-Jul-2016 03:12:28 UTC] PHP Notice:  Undefined index: Bonfire in /home/ifthenwhile/public_html/Test1/ReservationSummary.php on line 149
+[26-Jul-2016 03:12:28 UTC] PHP Notice:  Undefined index: hBarTitle in /home/ifthenwhile/public_html/Test1/ReservationSummary.php on line 381
+[26-Jul-2016 03:13:51 UTC] PHP Notice:  Undefined index: hBarTitle in /home/ifthenwhile/public_html/Test1/ReservationSummary.php on line 381
+[26-Jul-2016 03:16:52 UTC] PHP Notice:  Undefined index: hBarTitle in /home/ifthenwhile/public_html/Test1/ReservationSummary.php on line 381
+[26-Jul-2016 03:18:11 UTC] PHP Notice:  Undefined index: hBarTitle in /home/ifthenwhile/public_html/Test1/ReservationSummary.php on line 381
+[26-Jul-2016 03:18:13 UTC] PHP Notice:  Undefined index: hBarTitle in /home/ifthenwhile/public_html/Test1/ReservationSummary.php on line 381
+[26-Jul-2016 03:21:36 UTC] PHP Notice:  A non well formed numeric value encountered in /home/ifthenwhile/public_html/Test1/ReservationSummary.php on line 438
+[26-Jul-2016 23:50:23 UTC] PHP Notice:  Undefined index: hGrandTotal in /home/ifthenwhile/public_html/Test1/ThankYou.php on line 56
+[26-Jul-2016 23:55:05 UTC] PHP Notice:  Undefined index: hGrandTotal in /home/ifthenwhile/public_html/Test1/ThankYou.php on line 56
+[26-Jul-2016 23:55:36 UTC] PHP Notice:  Undefined index: hGrandTotal in /home/ifthenwhile/public_html/Test1/ThankYou.php on line 56
+[27-Jul-2016 00:00:28 UTC] PHP Notice:  Undefined index: hGrandTotal in /home/ifthenwhile/public_html/Test1/ThankYou.php on line 56
+[27-Jul-2016 04:21:16 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ifthenwhile/public_html/Test1/ReservationDetail.php on line 22
+[27-Jul-2016 04:21:16 UTC] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/ifthenwhile/public_html/Test1/ReservationDetail.php on line 24

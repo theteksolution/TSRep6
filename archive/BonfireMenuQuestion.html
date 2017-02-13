@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Bonfire Menu Question</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" />
+<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+<script type="text/javascript" src="js/jqueryUI/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="js/jqueryUI/jquery-ui.css" />
+<script type="text/javascript"  src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            $("#btnSub").click(function () {
+                //validate here
+
+                if (ValidateDinner() == true) {
+                    //window.location.href = "RehearsalDinnerQuestion.html";
+                    $("#form1").submit();
+                }
+            });
+
+
+            function ValidateDinner() {
+
+                var foundError = true;
+
+                $("#form1 input[type=text]").each(function () {
+                    if (this.value == "") {
+                        $("#errorDiv").show();
+
+                        $("#errorDiv").fadeTo(2000, 500).slideUp(500, function () {
+                            $("#errorDiv").hide();
+                        });
+                        console.log('false');
+                        foundError = false;
+                    }
+                });
+
+                return foundError;
+            }
+
+        });
+</script>
+<style type="text/css">
+    .bs-example{
+    	margin-top:20px;
+    }
+     input,
+select,
+textarea {
+    max-width: 400px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="bs-example">
+    <div class="progress">
+    <div class="progress-bar" style="width: 75%;">
+        Step 5: Bonfire
+    </div>
+</div>
+</div>
+<h1>Bonfire Menu Question</h1>
+<h2>Bonfire Menu</h2>
+
+<form id="form1" action="UpdateReservation.php" method="post">
+<div class="checkbox">
+  <label><input id="Checkbox19" type="checkbox" /> Smores @$4 pp </label>
+</div>
+  
+<fieldset class="form-group">
+    <label for="numPeopleSmore">Number of People Smores</label>
+    <input type="text" class="form-control" id="numPeopleSmore" name="numPeopleSmore" placeholder="Number" />
+  </fieldset>  
+  
+<div class="checkbox">
+  <label><input id="Checkbox1" type="checkbox" /> Appetizers @ 8pp </label>
+</div>
+  
+  <fieldset class="form-group">
+    <label for="numPeopleApp">Number of People Appetizer</label>
+    <input type="text" class="form-control" id="numPeopleApp" name="numPeopleApp" placeholder="Number" />
+  </fieldset>  
+<h2>
+Bar at the Bonfire?
+</h2>
+<div >
+Question: Will this be tabulated like other bar formulas?<br /><br />
+
+I found this formula in the spreadsheet...<br />
+Beer priced at $5, Bottle of Wine priced at $30, Cocktail priced at $8<br />
+wine=(#of people*2/5)=number of bottles *1.31<br />
+
+</div>
+
+<br />
+
+<div>
+<div style="width:20%;float:left;"><a id="btnSub" class="btn btn-primary">Next: Checkout Brunch</a></div>
+<div id="errorDiv" class="alert alert-warning" style="width:80%;display:none;float:right;"><strong>Warning!</strong> <span id="errorMessage">Indicates a warning that might need attention.</span></div>
+</div>
+
+  <input type="hidden" value="Bonfire" name="formName" />
+  </form>
+  </div>
+</body>
+</html>

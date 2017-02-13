@@ -1,0 +1,406 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Rehearsal Dinner Question</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" />
+<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+<script type="text/javascript" src="js/jqueryUI/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="js/jqueryUI/jquery-ui.css" />
+<script type="text/javascript"  src="bootstrap/js/bootstrap.min.js"></script>
+   <script type="text/javascript">
+       $(function () {
+
+           $('.panel-collapse').on('show.bs.collapse', function () {
+               $("#hDinnerType").val($(this).attr("id"));
+               $(this).prev('.panel-heading').find('.span-title').addClass("glyphicon glyphicon-ok");
+           });
+
+           $('.panel-collapse').on('hide.bs.collapse', function () {
+               $("#hDinnerType").val("");
+               $(this).find('input[type=checkbox]:checked').removeAttr('checked');
+               $(this).find('input[type=checkbox]').removeAttr('disabled');
+
+               $(this).prev('.panel-heading').find('.span-title').removeClass("glyphicon glyphicon-ok");
+           });
+
+
+           $("#Appetizer1 input[type=checkbox]").click(function () {
+               var countchecked = $("#Appetizer1 input[type=checkbox]:checked").length;
+
+               if (countchecked >= 2) {
+                   $('#Appetizer1 input[type=checkbox]').not(':checked').attr("disabled", true);
+               }
+               else {
+                   $('#Appetizer1 input[type=checkbox]').not(':checked').attr("disabled", false);
+               }
+           });
+
+           $("#Appetizer2 input[type=checkbox]").click(function () {
+               var countchecked = $("#Appetizer2 input[type=checkbox]:checked").length;
+
+               if (countchecked >= 1) {
+                   $('#Appetizer2 input[type=checkbox]').not(':checked').attr("disabled", true);
+               }
+               else {
+                   $('#Appetizer2 input[type=checkbox]').not(':checked').attr("disabled", false);
+               }
+           });
+
+
+
+           $("#Grill1 input[type=checkbox]").click(function () {
+               var countchecked = $("#Grill1 input[type=checkbox]:checked").length;
+
+               if (countchecked >= 3) {
+                   $('#Grill1 input[type=checkbox]').not(':checked').attr("disabled", true);
+               }
+               else {
+                   $('#Grill1 input[type=checkbox]').not(':checked').attr("disabled", false);
+               }
+           });
+
+           $("#Entree2 input[type=checkbox]").click(function () {
+               var countchecked = $("#Entree2 input[type=checkbox]:checked").length;
+
+               if (countchecked >= 2) {
+                   $('#Entree2 input[type=checkbox]').not(':checked').attr("disabled", true);
+               }
+               else {
+                   $('#Entree2 input[type=checkbox]').not(':checked').attr("disabled", false);
+               }
+           });
+
+           $("#Dessert1 input[type=checkbox]").click(function () {
+               var countchecked = $("#Dessert1 input[type=checkbox]:checked").length;
+
+               if (countchecked >= 2) {
+                   $('#Dessert1 input[type=checkbox]').not(':checked').attr("disabled", true);
+               }
+               else {
+                   $('#Dessert1 input[type=checkbox]').not(':checked').attr("disabled", false);
+               }
+           });
+
+           $("#Bar input[type=checkbox]").click(function () {
+               var countchecked = $("#Bar input[type=checkbox]:checked").length;
+
+               if (countchecked >= 1) {
+                   $('#Bar input[type=checkbox]').not(':checked').attr("disabled", true);
+               }
+               else {
+                   $('#Bar input[type=checkbox]').not(':checked').attr("disabled", false);
+               }
+           });
+
+
+           $("#btnSub").click(function () {
+
+
+               if (ValidateDinner() == true) {
+                   //var selected = [];
+                   $('#Appetizer1 input:checked').each(function () {
+                       // selected.push($(this).attr('name'));
+                       $("#hAppetizer1").val($("#hAppetizer1").val() + "^" + $(this).parent().text());
+                       //selected.push($(this).parent().text());
+                   })
+
+                   $('#Grill1 input:checked').each(function () {
+                       $("#hGrill1").val($("#hGrill1").val() + "^" + $(this).parent().text());
+                   });
+
+                   $('#Dessert1 input:checked').each(function () {
+                       $("#hDessert1").val($("#hDessert1").val() + "^" + $(this).parent().text());
+                   });
+
+                   $('#Appetizer2 input:checked').each(function () {
+                       $("#hAppetizer2").val($("#hAppetizer2").val() + "^" + $(this).parent().text());
+                   });
+
+                   $('#Entree2 input:checked').each(function () {
+                       $("#hEntree2").val($("#hEntree2").val() + "^" + $(this).parent().text());
+                   });
+
+                   $('#Bar input:checked').each(function () {
+                       $("#hBar").val($("#hBar").val() + "^" + $(this).parent().text());
+                   });
+
+
+                   //window.location.href = "WeddingDinnerQuestion.html";
+
+                   $("#form1").submit();
+               }
+
+           });
+
+
+           function ShowError(message) {
+               $("#errorMessage").html(message);
+               $("#errorDiv").show();
+
+               $("#errorDiv").fadeTo(2000, 500).slideUp(500, function () {
+                   $("#errorDiv").hide();
+               });
+           }
+
+
+           function ValidateDinner() {
+
+               // A dinner must be selected
+               if ($("#hDinnerType").val() == "") {
+                   ShowError("Please Select a Dinner Type");
+                   return false;
+               }
+
+               if ($("#hDinnerType").val() == "collapseOne") {
+
+                   if ($("#Appetizer1 input[type=checkbox]:checked").length != $("#hAppetizer1Num").val()) {
+                       ShowError("Please Select " + $("#hAppetizer1Num").val() + " Appetizer1");
+                       return false;
+                   }
+
+                   if ($("#Grill1 input[type=checkbox]:checked").length != $("#hGrill1Num").val()) {
+                       ShowError("Please Select " + $("#hGrill1Num").val() + " Grills");
+                       return false;
+                   }
+
+                   if ($("#Dessert1 input[type=checkbox]:checked").length != $("#hDessert1Num").val()) {
+                       ShowError("Please Select " + $("#hDessert1Num").val() + " Dessert");
+                       return false;
+                   }
+
+               }
+               else {
+
+                   if ($("#Appetizer2 input[type=checkbox]:checked").length != $("#hAppetizer2Num").val()) {
+                       ShowError("Please Select " + $("#hAppetizer2Num").val() + " Appetizer2");
+                       return false;
+                   }
+
+
+                   if ($("#Entree2 input[type=checkbox]:checked").length != $("#hEntree2Num").val()) {
+                       ShowError("Please Select " + $("#hEntree2Num").val() + " Entree");
+                       return false;
+                   }
+
+               }
+
+             
+
+
+               if ($("#Bar input[type=checkbox]:checked").length != 1) {
+                   ShowError("Please Select 1 Bar");
+                   return false;
+               }
+
+          
+               return true;
+           }
+
+
+       });
+</script>
+<style type="text/css">
+    .bs-example{
+    	margin-top:20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+<div class="bs-example">
+    <div class="progress">
+    <div class="progress-bar" style="width: 45%;">
+        Step 3: Rehearsal Dinner
+    </div>
+</div>
+</div>
+<h1>Rehearsal Dinner</h1>
+<h3>Choose one of the dinner options, then the bar</h3>
+
+<form id="form1" action="UpdateReservation.php" method="post">
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          Option 1: Barbecue Rehearsal Dinner @$45 plus tax and gratuity<span style="padding-left:7px" class="span-title"></span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        
+<b>Starters:</b> <br />
+Salsa and Tortilla Chips, Corn Bread and Rolls.<br /><br />
+<b>Appetizers:</b> (Choose two) <br />
+
+<div id="Appetizer1">
+<div class="checkbox">
+  <label><input id="Checkbox18" type="checkbox" name="Checkbox18"/>Potato Salad</label>
+</div>
+<div class="checkbox">
+  <label><input id="Checkbox26" type="checkbox"  name="Checkbox26"/>Organic Green Salad</label>
+</div>
+<div class="checkbox">
+  <label><input id="Checkbox27" type="checkbox" name="Checkbox27" />Corn on the Cob</label>
+</div>
+<div class="checkbox">
+  <label><input id="Checkbox30" type="checkbox" name="Checkbox30" />Veggie Kabobs</label>
+</div>
+</div>
+
+<br />
+<b>From the Grill:</b> (Choose three) <br />
+<div id="Grill1">
+<div class="checkbox">
+  <label><input id="Checkbox31" type="checkbox" name="Checkbox31" />BBQ Chicken</label>
+</div>
+<div class="checkbox">
+  <label><input id="Checkbox32" type="checkbox" name="Checkbox32" />Pork Ribs with North Carolina BBQ Sauce</label>
+</div>
+<div class="checkbox">
+  <label><input id="Checkbox33" type="checkbox" name="Checkbox33" />Hot Dogs</label>
+</div>
+<div class="checkbox">
+  <label><input id="Checkbox34" type="checkbox" name="Checkbox34" />Hamburgers</label>
+</div>
+<div class="checkbox">
+  <label><input id="Checkbox35" type="checkbox" name="Checkbox35" />Veggieburgers</label>
+</div>
+</div>
+
+<br />
+<b>Desserts:</b> (Choose two) <br />
+
+<div id="Dessert1">
+<div class="checkbox">
+  <label><input id="Checkbox36" type="checkbox" name="Checkbox36" />Cookies</label>
+</div>
+<div class="checkbox">
+  <label><input id="Checkbox37" type="checkbox" name="Checkbox37" />Brownies</label>
+</div>
+<div class="checkbox">
+  <label><input id="Checkbox38" type="checkbox"  name="Checkbox38"/>Vanilla Ice Cream</label>
+</div>
+<div class="checkbox">
+  <label><input id="Checkbox39" type="checkbox"  name="Checkbox39"/> Watermelon</label>
+</div>
+</div>
+
+
+
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Option 2: Full Rehearsal Dinner @$65 plus tax and gratuity<span style="padding-left:7px" class="span-title"></span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+       
+<b>Appetizers and Salads:</b> (Choose one)<br />
+<div id="Appetizer2">
+<div class="checkbox">
+  <label><input id="Checkbox19" type="checkbox"  name="Checkbox19"/>Roasted Butternut Squash Bisque</label>
+</div>
+<div class="checkbox">
+  <label><input id="Checkbox20" type="checkbox"  name="Checkbox20"/>Seasonal Greens with Apples</label>
+</div>
+<div class="checkbox">
+  <label><input id="Checkbox21" type="checkbox"  name="Checkbox21"/>Maple Vinaigrette Winter Kale Lemon Sesame Salad</label>
+</div>
+</div>
+
+<br />
+<b>Entrees: (includes two)</b> <br />
+<div id="Entree2">
+<div class="checkbox">
+  <label><input id="Checkbox22" type="checkbox" name="Checkbox22" />Vermont Chicken Breast with Citrus Champagne Sauce</label>
+</div>
+<div class="checkbox">
+  <label><input id="Checkbox23" type="checkbox"  name="Checkbox23"/>Steak Bordelaise with Mushroom Sauce</label>
+</div>
+<div class="checkbox">
+  <label><input id="Checkbox24" type="checkbox" name="Checkbox24" />Chick Pea & Roasted Vegetable Quinoa Curry</label>
+</div>
+<div class="checkbox">
+  <label><input id="Checkbox25" type="checkbox" name="Checkbox25" />Broiled Salmon with Maple Teriyaki Glaze</label>
+</div>
+</div>
+<br />
+<b>Desserts:</b><br />
+ Baked Seasonal Fruit Crisp<br />
+ Brownies<br />
+ <br /><br />
+Meal includes freshly baked wood-fired artisan breads from Earth Sky Time Farm, Chef’s choice of vegetable and side dishes
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h3>Rehearsal Bar</h3>
+
+
+<br />
+All bar menus are consumption based. The following pricing models are based on
+three tiers of drink offerings and are customizable based on your preferences.<br />
+Please select one for your rehearsal event.<br /><br />
+
+<div id="Bar">
+<div class="checkbox">
+  <label><input id="Checkbox14" type="checkbox"  name="Checkbox14"/>1. Grand Bar: Featuring wine @8, beer @5, cocktails @10, and champagne @
+7 (if selected tabulate pricing based on 1 beer per person, 1 cocktail, and 2
+glass of wine, 1 glass of champagne)</label>
+</div>
+<div class="checkbox">
+  <label><input id="Checkbox15" type="checkbox"  name="Checkbox15"/>2. Deluxe Bar: Featuring house wine @ 6, beer @ 5, signature cocktail @ 8, and
+champagne @ 7. (if selected tabulate pricing based on 1 beer per person, 1
+cocktail, and 2 glass of wine, 1 glass of champagne)</label>
+</div>
+<div class="checkbox">
+  <label><input id="Checkbox16" type="checkbox" name="Checkbox16" />3. Cash Bar: Cost of $150 bar set up fee</label>
+</div>
+</div>
+ <br /> 
+
+ 
+<div>
+<div style="width:20%;float:left;"><a id="btnSub" class="btn btn-primary">Next: Wedding Dinner</a></div>
+<div id="errorDiv" class="alert alert-warning" style="width:80%;display:none;float:right;"><strong>Warning!</strong> <span id="errorMessage">Indicates a warning that might need attention.</span></div>
+</div>
+  
+ <br /> <br /> <br />
+<!-- Category number fields for validation -->
+
+<input type="hidden" id="hAppetizer1Num" value="2"/>
+<input type="hidden" id="hGrill1Num"  value="3"/>
+<input type="hidden" id="hDessert1Num"  value="2"/>
+<input type="hidden" id="hAppetizer2Num"  value="1"/>
+<input type="hidden" id="hEntree2Num"  value="2"/>
+
+
+<!-- Submit fields -->
+<input type="hidden" id="hAppetizer1" name="hAppetizer1" />
+<input type="hidden" id="hGrill1"  name="hGrill1" />
+<input type="hidden" id="hDessert1"  name="hDessert1" />
+<input type="hidden" id="hAppetizer2"  name="hAppetizer2" />
+<input type="hidden" id="hEntree2"  name="hEntree2" />
+<input type="hidden" id="hBar"  name="hBar" />
+<input type="hidden" id="hDinnerType"  name="hDinnerType" />
+<input type="hidden" value="RehearsalDinner" name="formName" />
+
+</form>
+  </div>
+</body>
+</html>

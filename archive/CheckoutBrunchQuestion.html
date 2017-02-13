@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Checkout Brunch Question</title>
+     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" />
+<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+<script type="text/javascript" src="js/jqueryUI/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="js/jqueryUI/jquery-ui.css" />
+<script type="text/javascript"  src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btnSub").click(function () {
+                //validate here
+
+                $("#form1").submit();
+            });
+
+
+        });
+</script>
+<style type="text/css">
+    .bs-example{
+    	margin-top:20px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="bs-example">
+    <div class="progress">
+    <div class="progress-bar" style="width: 90%;">
+        Step 6: Checkout Brunch
+    </div>
+</div>
+</div>
+<h1>Checkout Brunch Question</h1>
+<form id="form1" action="UpdateReservation.php" method="post">
+<div class="checkbox">
+  <label><input id="Checkbox4" type="checkbox" />Would you like brunch on Checkout Day?</label>
+</div>
+
+<b>Brunch Options:</b> (Choose One) <br />
+<div class="checkbox">
+  <label><input id="Checkbox1" type="checkbox" name="Checkbox1" />Option 1 (TBD)</label>
+</div>
+<div class="checkbox">
+  <label><input id="Checkbox2" type="checkbox" name="Checkbox2" />Option 2 (TBD)</label>
+</div>
+<div class="checkbox">
+  <label><input id="Checkbox3" type="checkbox" name="Checkbox3" />Option 3 (TBD)</label>
+</div>
+<br />
+<div>
+<div style="width:20%;float:left;"><a id="btnSub" class="btn btn-primary">Next: Summary</a></div>
+<div id="errorDiv" class="alert alert-warning" style="width:80%;display:none;float:right;"><strong>Warning!</strong> <span id="errorMessage">Indicates a warning that might need attention.</span></div>
+</div>
+
+
+  <input type="hidden" value="Brunch" name="formName" />
+  </form>
+  </div>
+</body>
+</html>
